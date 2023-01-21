@@ -16,7 +16,7 @@ function printID(id: number | string) :void {
 }
 */
 
-const compteur = document.querySelector('#compteur')
+const compteur = document.querySelector('#compteur')!
 let i = 0; 
 
 const increment = (e: Event) => {
@@ -28,5 +28,25 @@ const increment = (e: Event) => {
     }
 }
 
+/*
+function printId(id : string | number) {
+    if(typeof id==="number"){
+        console.log((id*3).toString())
+    } else {
+        console.log(id.toUpperCase())
+    }
+}
+
+function example (a: string | Date){
+    if(a instanceof Date){
+        a
+    }
+}
+
+function devine(a: MouseEvent | HTMLInputElement){
+    if("value" in a ){
+        a
+    }
+}
 
 compteur?.addEventListener('click', increment)
