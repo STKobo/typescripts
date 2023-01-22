@@ -6,7 +6,10 @@ class Chat {
 
 }
 
-function generator<T extends {nager: any} | {sauter : any}> (options : T): T extends {nager : any} ? Poisson : Chat {
+type AnimalOptions = {nager: any} | {sauter : any}
+type AnimalFromOption<T> = T extends {nager : any} ? Poisson : Chat
+
+function generator<T extends AnimalOptions> (options : T): AnimalFromOption<T> {
     if("nager" in options) {
         return new Poisson()
     } else {
