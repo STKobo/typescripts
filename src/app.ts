@@ -1,15 +1,8 @@
-interface Point {
-    x: number 
-    y: number 
+type ListItem = [string, number]
+const a: ListItem = ['tomate', 2]
+const b: ListItem = ['banane', 3]
+const c = [] as string []
+
+if(c[0]){
+    console.log(c[0].toUpperCase())
 }
-
-class DimensionPoint implements Point {
-    x = 0
-    y = 0
-}
-
-function draw (p: Point) {
-
-}
-
-draw(new DimensionPoint())
