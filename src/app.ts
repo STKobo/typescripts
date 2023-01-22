@@ -1,23 +1,14 @@
-function reverse<T>(arr: readonly T[]):  T[] {
-    return [...arr].reverse();
+abstract class Geometry {
+    x = 0 
+    y = 0 
+    abstract surface(): number 
 }
 
-class Collection<T> {
-    constructor (private items: T[]) {
+class Triangle extends Geometry {
+    x = 2
+    y = 2
 
-    }
-
-    add (item: T): this{
-        this.items.push(item)
-        return this 
-    } 
-
-    first (): T | null {
-        return this.items[0] || null
+    surface (){
+        return 3
     }
 }
-
-
-const a = new Collection<number>([1, 2])
-const c = a.add(3)
-const b = a.first()
