@@ -2,13 +2,22 @@ function reverse<T>(arr: readonly T[]):  T[] {
     return [...arr].reverse();
 }
 
-class A {
-    private a = 3
+class Collection<T> {
+    constructor (private items: T[]) {
 
-    log () {
-        console.log(this.a)
+    }
+
+    add (item: T): this{
+        this.items.push(item)
+        return this 
+    } 
+
+    first (): T | null {
+        return this.items[0] || null
     }
 }
 
-const aInstance = new A()
-aInstance.log()
+
+const a = new Collection<number>([1, 2])
+const c = a.add(3)
+const b = a.first()
