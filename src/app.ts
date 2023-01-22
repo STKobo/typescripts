@@ -1,14 +1,15 @@
-abstract class Geometry {
-    x = 0 
-    y = 0 
-    abstract surface(): number 
+interface Point {
+    x: number 
+    y: number 
 }
 
-class Triangle extends Geometry {
-    x = 2
-    y = 2
-
-    surface (){
-        return 3
-    }
+class DimensionPoint implements Point {
+    x = 0
+    y = 0
 }
+
+function draw (p: Point) {
+
+}
+
+draw(new DimensionPoint())
